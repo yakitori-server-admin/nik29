@@ -1,0 +1,159 @@
+@media screen and (min-width: 768px) {
+    #menu {
+        display: none;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+:root {
+    --h-font: 'Segoe UI', Tahoma, Geneva, Verdana, 游ゴシック, 'Yu Gothic', YuGothic, 'Hiragino Gothic ProN', 'Hiragino Gothic Pro', HGSゴシックE, sans-serif;
+    --p-font: 'Times New Roman', Times, 游明朝, 'Yu Mincho', YuMincho, 'Hiragino Mincho ProN', 'Hiragino Mincho Pro', HGS明朝E, serif;
+    --label-font: Arial, Helvetica, 游ゴシック, 'Yu Gothic', YuGothic, 'Hiragino Gothic ProN', 'Hiragino Gothic Pro', HGSゴシックE, sans-serif;
+    --a-color: #2070c0;
+    --a-hover-color: #2060b0;
+    --a-active-color: #2050a0;
+}
+body {
+    font-family: var(--p-font);
+    font-size: 20px;
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--h-font);
+    
+    margin: 0;
+    border-bottom: 1px solid #a0a0a0;
+}
+h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+img {
+    vertical-align: bottom;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px;
+}
+header #logo {
+    display: inline-block;
+}
+
+header, #sidebar {
+    background-color: #f0f0f0;
+}
+
+#wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+#sidebar {
+    display: flex;
+    max-width: 208px;
+    flex: 1;
+    padding: 32px;
+}
+#sidebar.display {
+    display: none;
+}
+#sidebar, #sidebar section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+#sidebar section a {
+    font-family: var(--h-font);
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #000;
+}
+#sidebar section a:hover {
+    text-decoration: underline 1px solid;
+}
+
+#menu {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 0;
+    top: 34px;
+    right: 34px;
+    
+    cursor: pointer;
+}
+#menu:hover {
+    background-color: #e0e0e0;
+}
+#menu:active {
+    background-color: #d0d0d0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+    gap: 16px;
+    padding: 32px;
+    border: 1px solid #e0e0e0;
+}
+main dl {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+main dd {
+    margin-left: 0;
+}
+main a {
+    display: inline-flex;
+    color: var(--a-color);
+    text-decoration: none;
+}
+main a:hover {
+    text-decoration: underline;
+}
+main a path {
+    fill: var(--a-color);
+}
+main .button {
+    font-family: var(--label-font);
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+    color: #fff;
+
+    display: inline-flex;
+    flex-direction: row;
+    gap: 2px;
+    padding: 8px 16px;
+    margin: 20px 0;
+    background-color: var(--a-color);
+    border-radius: 4px;
+
+}
+main .button:hover {
+    text-decoration: none;
+
+    background-color: var(--a-hover-color);
+}
+main .button:active {
+    text-decoration: none;
+
+    background-color: var(--a-active-color);
+}
+main .button path {
+    fill: #fff;
+}
