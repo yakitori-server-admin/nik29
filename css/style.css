@@ -11,6 +11,7 @@
     --h-font: 'Segoe UI', Tahoma, Geneva, Verdana, 游ゴシック, 'Yu Gothic', YuGothic, 'Hiragino Gothic ProN', 'Hiragino Gothic Pro', HGSゴシックE, sans-serif;
     --p-font: 'Times New Roman', Times, 游明朝, 'Yu Mincho', YuMincho, 'Hiragino Mincho ProN', 'Hiragino Mincho Pro', HGS明朝E, serif;
     --label-font: Arial, Helvetica, 游ゴシック, 'Yu Gothic', YuGothic, 'Hiragino Gothic ProN', 'Hiragino Gothic Pro', HGSゴシックE, sans-serif;
+    --code-font: Consolas, Courier New, Courier, monospace, SFMono-Regular, Menlo, Monaco;
     --a-color: #2070c0;
     --a-hover-color: #2060b0;
     --a-active-color: #2050a0;
@@ -109,13 +110,36 @@ main {
     padding: 32px;
     border: 1px solid #e0e0e0;
 }
-main dl {
+main dl, main ul, main ol {
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 main dd {
     margin-left: 0;
+}
+main li strong, main summary strong {
+    font-family: var(--label-font);
+    font-size: 18px;
+}
+main code {
+    font-family: var(--code-font);
+    font-size: 16px;
+
+    padding: 2px 4px;
+    background-color: #f0f0f0;
+    border: 1px solid #e0e0e0;
+
+    vertical-align: baseline;
+}
+main details {
+    margin: 20px 0;
+}
+main details summary {
+    font-family: var(--label-font);
+    font-size: 20px;
+
+    cursor: pointer;
 }
 main a {
     display: inline-flex;
@@ -156,4 +180,25 @@ main .button:active {
 }
 main .button path {
     fill: #fff;
+}
+main nav {
+    display: block;
+    width: fit-content;
+    padding: 16px;
+    background-color: #f0f0f0;
+    border: 1px solid #e0e0e0;
+}
+main nav section {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 16px;
+}
+main nav h3 {
+    border-bottom: none;
+}
+main nav ul {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 0;
 }
