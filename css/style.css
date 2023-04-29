@@ -169,8 +169,10 @@ main .button {
     width: fit-content;
     padding: 8px 16px;
     background-color: var(--a-color);
+    border: none;
     border-radius: 4px;
 
+    cursor: pointer;
     user-select: none;
 }
 main .button:hover {
@@ -216,4 +218,31 @@ main nav ul {
     flex-direction: column;
     gap: 16px;
     margin: 0;
+}
+main form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: fit-content;
+}
+main form div {
+    display: flex;
+    flex-direction: column;
+}
+main legend, main form div label {
+    font-family: var(--label-font);
+}
+.required::after {
+    color: #c04030;
+
+    content: "*";
+}
+main input[type="text"], main input[type="email"], main textarea {
+    font-family: var(--p-font);
+    font-size: 20px;
+
+    padding: 8px;
+}
+iframe[name="hidden"] {
+    display: none;
 }
