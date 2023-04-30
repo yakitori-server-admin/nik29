@@ -1,9 +1,3 @@
-@media screen and (min-width: 768px) {
-    #menu {
-        display: none;
-    }
-}
-
 * {
     box-sizing: border-box;
 }
@@ -51,7 +45,7 @@ header #logo {
     user-select: none;
 }
 
-header, #sidebar {
+header, #wrapper {
     background-color: #f0f0f0;
 }
 
@@ -61,15 +55,16 @@ header, #sidebar {
 }
 
 #sidebar {
-    display: flex;
-    max-width: 208px;
-    flex: 1;
+    display: none;
+    width: 100%;
+    height: calc(100vh - 100px);
     padding: 32px;
 }
-#sidebar.display {
-    display: none;
+.display #sidebar {
+    display: flex;
+    width: 100vw;
 }
-#sidebar, #sidebar section {
+#sidebar section {
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -107,10 +102,14 @@ header, #sidebar {
 main {
     display: flex;
     flex-direction: column;
-    flex: 2;
     gap: 24px;
+    width: 100%;
     padding: 32px;
+    background-color: #fff;
     border: 1px solid #e0e0e0;
+}
+.display main {
+    display: none;
 }
 main dl, main ul, main ol {
     display: flex;
@@ -202,8 +201,8 @@ main nav {
     width: fit-content;
     padding: 16px;
     margin: 20px 0;
-    background-color: #f0f0f0;
-    border: 1px solid #e0e0e0;
+    background-color: #f7f7f7;
+    border: 1px solid #e8e8e8;
 }
 main nav section {
     display: inline-flex;
@@ -223,7 +222,7 @@ main form {
     display: flex;
     flex-direction: column;
     gap: 16px;
-    width: fit-content;
+    width: 100%;
 }
 main form div {
     display: flex;
@@ -231,6 +230,17 @@ main form div {
 }
 main legend, main form div label {
     font-family: var(--label-font);
+}
+main fieldset {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+}
+main label {
+    padding-left: 22px;
+    text-indent: -22px;
+
+    word-break: break-all;
 }
 .required::after {
     color: #c04030;
@@ -247,4 +257,18 @@ main input[type="text"], main input[type="email"], main textarea {
 }
 iframe[name="hidden"] {
     display: none;
+}
+
+@media screen and (min-width: 768px) {
+    #menu {
+        display: none;
+    }
+    #sidebar {
+        display: flex;
+        width: fit-content;
+        height: 100%;
+    }
+    #sidebar section {
+        width: max-content;
+    }
 }

@@ -1,6 +1,6 @@
 const menu = document.getElementById("menu");
-const sidebar = document.getElementById("sidebar");
+const wrapper = document.getElementById("wrapper");
 
 menu.addEventListener("click", function () {
-  sidebar.classList.toggle("display");
+  wrapper.classList.toggle("display");
 });
